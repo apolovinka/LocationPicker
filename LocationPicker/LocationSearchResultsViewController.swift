@@ -18,6 +18,8 @@ class LocationSearchResultsViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		extendedLayoutIncludesOpaqueBars = true
+        self.tableView.rowHeight = 60.0
+        self.tableView.estimatedRowHeight = 60.0
 	}
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -33,8 +35,10 @@ class LocationSearchResultsViewController: UITableViewController {
 			?? UITableViewCell(style: .subtitle, reuseIdentifier: "LocationCell")
 
 		let location = locations[indexPath.row]
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
 		cell.textLabel?.text = location.name
 		cell.detailTextLabel?.text = location.address
+        cell.detailTextLabel?.textColor = UIColor.darkGray
 		
 		return cell
 	}

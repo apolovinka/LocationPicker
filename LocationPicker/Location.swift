@@ -32,9 +32,11 @@ public class Location: NSObject {
 		} else {
 			return "\(coordinate.latitude), \(coordinate.longitude)"
 		}
+
 	}
 	
 	public init(name: String?, location: CLLocation? = nil, placemark: CLPlacemark) {
+        
 		self.name = name
 		self.location = location ?? placemark.location!
 		self.placemark = placemark

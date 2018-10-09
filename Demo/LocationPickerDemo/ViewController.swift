@@ -29,10 +29,13 @@ class ViewController: UIViewController {
 		if segue.identifier == "LocationPicker" {
 			let locationPicker = segue.destination as! LocationPickerViewController
             locationPicker.location = location
-			locationPicker.showCurrentLocationButton = true
-			locationPicker.useCurrentLocationAsHint = true
-			locationPicker.selectCurrentLocationInitially = true
-			
+            locationPicker.showCurrentLocationButton = true
+            locationPicker.mapType = .standard
+            locationPicker.useCurrentLocationAsHint = true
+            locationPicker.pinImage = UIImage(named: "map-annotation-small-icon")
+            locationPicker.initialLocationRequest = LocationRequest(location: CLLocation(latitude: 48.4647, longitude: 35.0462))
+//            locationPicker.selectCurrentLocationInitially = true
+
 			locationPicker.completion = { self.location = $0 }
 		}
 	}
