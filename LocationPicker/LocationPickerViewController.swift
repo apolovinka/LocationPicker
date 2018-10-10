@@ -505,6 +505,7 @@ extension LocationPickerViewController: UISearchResultsUpdating {
 	
 	func selectedLocation(_ location: Location) {
 		// dismiss search results
+        mapChangedFromUserInteraction = true
 		dismiss(animated: true) {
 			// set location, this also adds annotation
 			self.location = location
