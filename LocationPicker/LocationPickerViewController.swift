@@ -54,7 +54,7 @@ open class LocationPickerViewController: UIViewController {
 				return barTintColor
 		} else { return .white }
 	}()
-    
+
     /// default: .Minimal
     public var searchBarStyle: UISearchBarStyle = .minimal
 
@@ -119,7 +119,7 @@ open class LocationPickerViewController: UIViewController {
 		return search
 	}()
 	
-	lazy var searchBar: UISearchBar = {
+	public lazy var searchBar: UISearchBar = {
 		let searchBar = self.searchController.searchBar
 		searchBar.searchBarStyle = self.searchBarStyle
 		searchBar.placeholder = self.searchBarPlaceholder
