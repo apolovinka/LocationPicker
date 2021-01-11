@@ -295,7 +295,8 @@ open class LocationPickerViewController: UIViewController {
             if #available(iOS 11.0, *) {
                 searchBarHeight = self.searchBar.frame.height
             }
-            constraint.constant += ((self.navigationController?.navigationBar.frame.size.height ?? 0) + searchBarHeight + UIApplication.shared.statusBarFrame.height)/2 - pinImageView.frame.height/2
+            let navivationBarHight: CGFloat = self.navigationController?.navigationBar.frame.size.height ?? 0
+            constraint.constant += (navivationBarHight + searchBarHeight + UIApplication.shared.statusBarFrame.height)/2.0 - pinImageView.frame.height/2.0
             constraint.isActive = true
         }
 
@@ -553,7 +554,7 @@ extension LocationPickerViewController: MKMapViewDelegate {
         }
 		
 		let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
-		pin.pinColor = .green
+        pin.pinTintColor = .green
 		// drop only on long press gesture
 		let fromLongPress = annotation is MKPointAnnotation
 		pin.animatesDrop = fromLongPress
